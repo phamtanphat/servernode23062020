@@ -27,7 +27,7 @@ const request = require('request');
 
 function cong(a , b){
     return new Promise((resolve , reject) => {
-        const URL = `https://pheptinhonline.herokuapp.com/chia/${a}/${b}`
+        const URL = `https://pheptinhonline.herokuapp.com/cong/${a}/${b}`
         request(URL , {json : true}, function (error, response, body) {
             if(error) return reject(error)
             if(!body.success) return reject(body.message)
@@ -65,3 +65,19 @@ function chia(a , b){
         });
     })
 }
+
+// cong(5 , 5)
+// .then(tong => tru(tong , 1))
+// .then(hieu => console.log(hieu))
+// .catch(error => console.log(error))
+
+async function tinhToan(){
+    try {
+        const tong = await cong(5,5)
+        const hieu = await tru(tong , 5)
+        console.log(hieu)
+    } catch (error) {
+        console.log(error)
+    }
+}
+tinhToan()
