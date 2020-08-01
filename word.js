@@ -10,6 +10,7 @@ const Word = mongoose.model('Word' , {
     isMemorized : {type : Boolean , default : false}
 })
 
+module.exports = {Word}
 // Select
 // Word.find({})
 // .then(words => console.log(words))

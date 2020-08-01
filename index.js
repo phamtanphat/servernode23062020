@@ -1,6 +1,10 @@
-
-
-// user : abc
-// pass : React!@#123
-
-// url : mongodb+srv://abc:React!@#123@cluster0.0djds.mongodb.net/Cluster0?retryWrites=true&w=majority
+const express = require('express')
+const app = express()
+ 
+app.get('/word', function (req, res) {
+    const en = req.query.en
+    const vn = req.query.vn
+    res.send({en , vn})
+})
+ 
+app.listen(3000)
